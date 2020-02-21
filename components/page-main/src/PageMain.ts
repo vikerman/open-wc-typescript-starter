@@ -1,6 +1,9 @@
 import { html, css, LitElement } from 'lit-element';
 
 export class PageMain extends LitElement {
+  title = 'Hello open-wc world!';
+  logo = html``;
+
   static get styles() {
     return css`
       :host {
@@ -27,14 +30,8 @@ export class PageMain extends LitElement {
   static get properties() {
     return {
       title: { type: String },
-      logo: { type: Function },
+      logo: { attribute: false },
     };
-  }
-
-  constructor() {
-    super();
-    this.title = 'Hello open-wc world!';
-    this.logo = html``;
   }
 
   render() {

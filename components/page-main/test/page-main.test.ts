@@ -1,10 +1,11 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../page-main.js';
+import '../page-main';
+import { PageMain } from '../src/PageMain';
 
 describe('PageMain', () => {
   it('has a default title "Hello open-wc world!"', async () => {
-    const el = await fixture(html`
+    const el: PageMain = await fixture(html`
       <page-main></page-main>
     `);
 
@@ -12,7 +13,7 @@ describe('PageMain', () => {
   });
 
   it('can override the title via attribute', async () => {
-    const el = await fixture(html`
+    const el: PageMain = await fixture(html`
       <page-main title="attribute title"></page-main>
     `);
 

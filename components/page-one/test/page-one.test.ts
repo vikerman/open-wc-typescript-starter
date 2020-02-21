@@ -1,10 +1,11 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../page-one.js';
+import '../page-one';
+import { PageOne } from '../src/PageOne';
 
 describe('PageOne', () => {
   it('has a default title "Hey there" and counter 5', async () => {
-    const el = await fixture(html`
+    const el: PageOne = await fixture(html`
       <page-one></page-one>
     `);
 
@@ -13,16 +14,16 @@ describe('PageOne', () => {
   });
 
   it('increases the counter on button click', async () => {
-    const el = await fixture(html`
+    const el: PageOne = await fixture(html`
       <page-one></page-one>
     `);
-    el.shadowRoot.querySelector('button').click();
+    el.shadowRoot!.querySelector('button')!.click();
 
     expect(el.counter).to.equal(6);
   });
 
   it('can override the title via attribute', async () => {
-    const el = await fixture(html`
+    const el: PageOne = await fixture(html`
       <page-one title="attribute title"></page-one>
     `);
 

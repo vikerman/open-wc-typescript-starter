@@ -1,27 +1,28 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../my-app.js';
+import '../my-app';
+import { MyApp } from '../src/MyApp';
 
 describe('MyApp', () => {
   it('has page "main" by default', async () => {
-    const el = await fixture(html`
+    const el: MyApp = await fixture(html`
       <my-app></my-app>
     `);
 
     expect(el.page).to.equal('main');
-    expect(el.shadowRoot.querySelector('main')).lightDom.to.equal(`
+    expect(el.shadowRoot!.querySelector('main')).lightDom.to.equal(`
       <page-main></page-main>
     `);
   });
 
   it('renders default fallback content', async () => {
-    const el = await fixture(html`
+    const el: MyApp = await fixture(html`
       <my-app></my-app>
     `);
     el.page = undefined;
 
     expect(el.page).to.equal(undefined);
-    expect(el.shadowRoot.querySelector('main')).lightDom.to.equal(`
+    expect(el.shadowRoot!.querySelector('main')).lightDom.to.equal(`
       <page-main></page-main>
     `);
   });
@@ -30,16 +31,16 @@ describe('MyApp', () => {
     const el = await fixture(html`
       <my-app page="pageOne"></my-app>
     `);
-    expect(el.shadowRoot.querySelector('main')).lightDom.to.equal(`
+    expect(el.shadowRoot!.querySelector('main')).lightDom.to.equal(`
       <page-one></page-one>
     `);
   });
 
   it('changes the page if a menu link gets clicked', async () => {
-    const el = await fixture(html`
+    const el: MyApp = await fixture(html`
       <my-app></my-app>
     `);
-    el.shadowRoot.querySelectorAll('header a')[2].click();
+    (el.shadowRoot!.querySelectorAll('header a')[2] as HTMLElement).click();
 
     expect(el.page).to.equal('about');
   });

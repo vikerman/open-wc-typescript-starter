@@ -14,7 +14,9 @@
 
 ## temp folders
 /.tmp/
+/__snapshots__/
 
 # build
 /_site/
 /dist/
+/out-tsc/

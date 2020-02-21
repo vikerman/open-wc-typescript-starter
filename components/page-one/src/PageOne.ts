@@ -1,6 +1,9 @@
 import { html, css, LitElement } from 'lit-element';
 
 export class PageOne extends LitElement {
+  title = 'Hey there';
+  counter = 5;
+
   static get styles() {
     return css`
       :host {
@@ -18,12 +21,6 @@ export class PageOne extends LitElement {
       title: { type: String },
       counter: { type: Number },
     };
-  }
-
-  constructor() {
-    super();
-    this.title = 'Hey there';
-    this.counter = 5;
   }
 
   __increment() {

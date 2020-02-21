@@ -1,18 +1,14 @@
-import { LitElement, html, css } from 'lit-element';
-import { classMap } from 'lit-html/directives/class-map.js';
-import { openWcLogo } from './open-wc-logo.js';
+import { LitElement, html, css, property } from 'lit-element';
+import { classMap } from 'lit-html/directives/class-map';
+import { openWcLogo } from './open-wc-logo';
 
-import '../../page-main/page-main.js';
-import '../../page-one/page-one.js';
-import { templateAbout } from './templateAbout.js';
+import '../../page-main/page-main';
+import '../../page-one/page-one';
+import { templateAbout } from './templateAbout';
 
 export class MyApp extends LitElement {
-  static get properties() {
-    return {
-      title: { type: String },
-      page: { type: String },
-    };
-  }
+  @property() page: string | undefined = 'main';
+  @property() title = '';
 
   static get styles() {
     return css`
@@ -75,7 +71,6 @@ export class MyApp extends LitElement {
 
   constructor() {
     super();
-    this.page = 'main';
   }
 
   render() {
@@ -130,12 +125,12 @@ export class MyApp extends LitElement {
     }
   }
 
-  __onNavClicked(ev) {
+  __onNavClicked(ev: Event) {
     ev.preventDefault();
-    this.page = ev.target.hash.substring(1);
+    this.page = (ev.target as any).hash.substring(1);
   }
 
-  __navClass(page) {
+  __navClass(page: string) {
     return classMap({ active: this.page === page });
   }
 }
