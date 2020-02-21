@@ -1,7 +1,7 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../page-one';
-import { PageOne } from '../src/PageOne';
+import '../page-one.js';
+import { PageOne } from '../src/PageOne.js';
 
 describe('PageOne', () => {
   it('has a default title "Hey there" and counter 5', async () => {

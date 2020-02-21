@@ -1,10 +1,10 @@
 import { LitElement, html, css, property } from 'lit-element';
-import { classMap } from 'lit-html/directives/class-map';
-import { openWcLogo } from './open-wc-logo';
+import { classMap } from 'lit-html/directives/class-map.js';
+import { openWcLogo } from './open-wc-logo.js';
 
-import '../../page-main/page-main';
-import '../../page-one/page-one';
-import { templateAbout } from './templateAbout';
+import '../../page-main/page-main.js';
+import '../../page-one/page-one.js';
+import { templateAbout } from './templateAbout.js';
 
 export class MyApp extends LitElement {
   @property() page: string | undefined = 'main';
