@@ -1,0 +1,55 @@
+import { Story, Preview, Meta, Props, html } from '@open-wc/demoing-storybook';
+
+import '../my-app.js';
+
+<Meta 
+  title="MyApp"
+  parameters={{
+    component: "my-app",
+    options: { selectedPanel: "storybookjs/knobs/panel" }
+  }}
+/>
+
+# MyApp
+
+A component for...
+
+## Features:
+
+- a
+- b
+- ...
+
+## How to use
+
+### Installation
+
+```bash
+yarn add my-app
+```
+
+```js
+import 'my-app/my-app.js';
+```
+
+<Preview withToolbar>
+  <Story name="Simple">
+    {html`
+      <my-app></my-app>
+    `}
+  </Story>
+</Preview>
+
+## API
+
+<Props of="my-app" />
+
+## Variations
+
+###### Custom Title
+
+<Story name="Custom Title">
+  {html`
+    <my-app .title=${'Hello World'}></my-app>
+  `}
+</Story>
