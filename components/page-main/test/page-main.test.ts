@@ -1,7 +1,7 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../page-main';
-import { PageMain } from '../src/PageMain';
+import '../page-main.js';
+import { PageMain } from '../src/PageMain.js';
 
 describe('PageMain', () => {
   it('has a default title "Hello open-wc world!"', async () => {

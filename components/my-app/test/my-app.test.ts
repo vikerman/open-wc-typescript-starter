@@ -1,7 +1,7 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../my-app';
-import { MyApp } from '../src/MyApp';
+import '../my-app.js';
+import { MyApp } from '../src/MyApp.js';
 
 describe('MyApp', () => {
   it('has page "main" by default', async () => {
