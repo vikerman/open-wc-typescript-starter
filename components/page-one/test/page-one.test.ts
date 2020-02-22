@@ -17,6 +17,9 @@ describe('PageOne', () => {
     const el: PageOne = await fixture(html`
       <page-one></page-one>
     `);
+
+    // Assert non-null because we know it's there :)
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     el.shadowRoot!.querySelector('button')!.click();
 
     expect(el.counter).to.equal(6);

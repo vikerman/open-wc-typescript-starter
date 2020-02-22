@@ -127,6 +127,8 @@ export class MyApp extends LitElement {
 
   __onNavClicked(ev: Event) {
     ev.preventDefault();
+    // Allowing 'any' for accessing non-standard hash.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     this.page = (ev.target as any).hash.substring(1);
   }
 

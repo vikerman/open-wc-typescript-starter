@@ -10,6 +10,7 @@ describe('MyApp', () => {
     `);
 
     expect(el.page).to.equal('main');
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     expect(el.shadowRoot!.querySelector('main')).lightDom.to.equal(`
       <page-main></page-main>
     `);
@@ -22,6 +23,7 @@ describe('MyApp', () => {
     el.page = undefined;
 
     expect(el.page).to.equal(undefined);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     expect(el.shadowRoot!.querySelector('main')).lightDom.to.equal(`
       <page-main></page-main>
     `);
@@ -31,6 +33,7 @@ describe('MyApp', () => {
     const el = await fixture(html`
       <my-app page="pageOne"></my-app>
     `);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     expect(el.shadowRoot!.querySelector('main')).lightDom.to.equal(`
       <page-one></page-one>
     `);
@@ -40,6 +43,7 @@ describe('MyApp', () => {
     const el: MyApp = await fixture(html`
       <my-app></my-app>
     `);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     (el.shadowRoot!.querySelectorAll('header a')[2] as HTMLElement).click();
 
     expect(el.page).to.equal('about');
