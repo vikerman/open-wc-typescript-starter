@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     // disable the rule for all files
     '@typescript-eslint/explicit-function-return-type': 'off',
+    'import/named': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': ['error', 'always', { ignorePackages: true }],
   },
